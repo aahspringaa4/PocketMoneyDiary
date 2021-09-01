@@ -92,12 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
+        
         SharedPreferences pref = getSharedPreferences("save1", 0);
         Get1 = pref.getString("get", String.valueOf(0));
         Post1 = pref.getString("post", String.valueOf(0));
@@ -107,7 +102,12 @@ public class MainActivity extends AppCompatActivity {
         SumPost.setText(Post1);
         SumSave.setText(Save1);
         SumMoney.setText(total);
-        
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
         if (tempBoolean3){
             MainActivity.SumGet.setText("0");
             MainActivity.SumPost.setText("0");
