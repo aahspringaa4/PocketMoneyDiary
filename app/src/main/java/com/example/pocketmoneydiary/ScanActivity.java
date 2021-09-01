@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -26,8 +30,12 @@ public class ScanActivity extends AppCompatActivity {
     private static TextView year;
     ImageButton back;
     Button nowaday;
-    Button cate;
+    Button cate,commit;
     String[] cates;
+    EditText Money;
+    TextView totalm;
+    public static int a = 0;
+    public static String str = null;
     private static TextView month, day;
 
     @Override
@@ -41,6 +49,11 @@ public class ScanActivity extends AppCompatActivity {
         day = (TextView) findViewById(R.id.day);
         nowaday = (Button)findViewById(R.id.nowaday);
         cate = (Button) findViewById(R.id.cate);
+        Money = (EditText)findViewById(R.id.Money);
+        Money = (EditText)findViewById(R.id.Money);
+        commit = findViewById(R.id.commit);
+        totalm = (TextView)findViewById(R.id.totalm);
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +83,23 @@ public class ScanActivity extends AppCompatActivity {
                 oDialog.show();
             }
         });
+
+        commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                a = 0;
+                if (!Money.getText().toString().equals("")) {
+                    str = String.valueOf(Money.getText());
+                    Log.d("결과", "성공");
+                    finish();
+                    a++;
+                    MainActivity.tempBoolean2 = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "금액을 입력해 주세요.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         cate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +107,30 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        totalm.setText("$ " + MainActivity.SumMoney.getText());
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent Money) {
+        View focusView = getCurrentFocus();
+        if (focusView != null) {
+            Rect rect = new Rect();
+            focusView.getGlobalVisibleRect(rect);
+            int x = (int) Money.getX(), y = (int) Money.getY();
+            if (!rect.contains(x, y)) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                if (imm != null)
+                    imm.hideSoftInputFromWindow(focusView.getWindowToken(), 0);
+                focusView.clearFocus();
+            }
+        }
+        return super.dispatchTouchEvent(Money);
+    }
+
     public void showDialog(){
         cates = getResources().getStringArray(R.array.cate);
 
