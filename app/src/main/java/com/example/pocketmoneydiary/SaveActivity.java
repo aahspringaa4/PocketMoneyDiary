@@ -18,6 +18,8 @@ public class SaveActivity extends AppCompatActivity {
     public static TextView textView, textView2;
     int num1 = 0;
     int num2 = 0;
+    public static int a = 0;
+    public static String str = null;
     int result = 0;
     boolean checkOper = false, plus = false, minus = false, gob = false, nanu = false;
 
@@ -214,15 +216,16 @@ public class SaveActivity extends AppCompatActivity {
         commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(!textView.getText().toString().equals("")) {
-//                    Intent intent = new Intent(NumberPadActivity.this, MainActivity.class);
-//                    intent.putExtra("str", String.valueOf(textView));
-//                    Log.d("결과", "성공");
-//                    finish();
-//                }
-//                else {
-//                    Toast.makeText(getApplicationContext(), "값을 먼저 입력해주세요.", Toast.LENGTH_SHORT).show();
-//                }
+                a = 0;
+                if (!textView.getText().toString().equals("")) {
+                    str = String.valueOf(textView.getText());
+                    Log.d("결과", "성공");
+                    finish();
+                    a++;
+                    MainActivity.tempBoolean1 = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "값을 먼저 입력해주세요.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
