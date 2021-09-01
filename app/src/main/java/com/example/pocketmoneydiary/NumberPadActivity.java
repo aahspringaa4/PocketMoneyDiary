@@ -14,20 +14,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class NumberPadActivity extends AppCompatActivity {
-    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16, commit;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, commit;
     public static TextView textView, textView2;
     int num1 = 0;
     int num2 = 0;
     int result = 0;
     boolean checkOper = false, plus = false, minus = false, gob = false, nanu = false;
-
+    public static int a = 0;
+    public static String str = null;
     char c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_pad);
-
         textView = findViewById(R.id.result_tv);
         textView2 = findViewById(R.id.textView2);
         btn1 = findViewById(R.id.one_btn);
@@ -51,7 +51,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("1");
@@ -60,7 +60,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("2");
@@ -69,7 +69,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("3");
@@ -78,26 +78,23 @@ public class NumberPadActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper) {
+                if (checkOper) {
                     num2 = Integer.parseInt(textView.getText().toString());
                     textView2.append(Integer.toString(num2));
                     textView2.append("=");
                     textView.setText(null);
                     checkOper = true;
-                    if(plus){
-                        textView.append(Integer.toString(num1+num2));
+                    if (plus) {
+                        textView.append(Integer.toString(num1 + num2));
                         plus = false;
-                    }
-                    else if(minus){
-                        textView.append(Integer.toString(num1-num2));
+                    } else if (minus) {
+                        textView.append(Integer.toString(num1 - num2));
                         minus = false;
-                    }
-                    else if(gob){
-                        textView.append(Integer.toString(num1*num2));
+                    } else if (gob) {
+                        textView.append(Integer.toString(num1 * num2));
                         gob = false;
-                    }
-                    else if (nanu) {
-                        textView.append(Integer.toString(num1/num2));
+                    } else if (nanu) {
+                        textView.append(Integer.toString(num1 / num2));
                         nanu = false;
                     }
                 }
@@ -106,7 +103,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("4");
@@ -115,7 +112,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("5");
@@ -124,7 +121,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("6");
@@ -133,7 +130,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!checkOper) {
+                if (!checkOper) {
                     onClickMethod(" / ");
                     nanu = true;
                 }
@@ -142,7 +139,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("7");
@@ -151,7 +148,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("8");
@@ -160,7 +157,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("9");
@@ -169,7 +166,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!checkOper) {
+                if (!checkOper) {
                     onClickMethod(" x ");
                     gob = true;
                 }
@@ -179,7 +176,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("00");
@@ -188,7 +185,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("0");
@@ -197,7 +194,7 @@ public class NumberPadActivity extends AppCompatActivity {
         btn15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!checkOper) {
+                if (!checkOper) {
                     onClickMethod(" + ");
                     plus = true;
                 }
@@ -214,15 +211,16 @@ public class NumberPadActivity extends AppCompatActivity {
         commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(!textView.getText().toString().equals("")) {
-//                    Intent intent = new Intent(NumberPadActivity.this, MainActivity.class);
-//                    intent.putExtra("str", String.valueOf(textView));
-//                    Log.d("결과", "성공");
-//                    finish();
-//                }
-//                else {
-//                    Toast.makeText(getApplicationContext(), "값을 먼저 입력해주세요.", Toast.LENGTH_SHORT).show();
-//                }
+                a = 0;
+                if (!textView.getText().toString().equals("")) {
+                    str = String.valueOf(textView.getText());
+                    Log.d("결과", "성공");
+                    finish();
+                    a++;
+                    MainActivity.tempBoolean = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "값을 먼저 입력해주세요.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
