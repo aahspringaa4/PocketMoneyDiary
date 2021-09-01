@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:fontFamily="@font/gmbold"
             android:text="지출 입력"
             android:textSize="30dp"></TextView>
@@ -85,7 +85,8 @@
             android:layout_marginLeft="75dp"
             android:text="날짜 입력"
             android:padding="10dp"
-            android:textSize="15dp">
+            android:textSize="15dp"
+            android:textColor="@color/black">
         </Button>
     </LinearLayout>
 
@@ -141,16 +142,18 @@
             android:textSize="25dp"></TextView>
 
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/totalm"
+            android:layout_width="150dp"
+            android:layout_height="43dp"
             android:layout_marginLeft="160dp"
             android:layout_marginTop="32dp"
             android:text="$"
-            android:textSize="25dp"></TextView>
+            android:textSize="26dp"></TextView>
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -171,15 +174,73 @@
             android:id="@+id/cate"
             android:layout_width="200dp"
             android:layout_height="45dp"
-            android:background="@drawable/add"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="13dp"
-            android:text="카테고리 입력"
+            android:background="@drawable/add"
             android:gravity="center"
             android:padding="10dp"
-            android:textSize="15dp">
-        </Button>
+            android:text="카테고리 입력"
+            android:textColor="@color/black"
+            android:textSize="15dp"></Button>
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/gmbold"
+            android:text="금액"
+            android:textSize="25dp"></TextView>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="147dp"
+            android:layout_marginTop="13dp">
+
+            <EditText
+                android:id="@+id/Money"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp"
+                android:hint="금액 입력"
+                android:textColorHint="@color/black"
+                android:background="@drawable/add"
+                android:textSize="15dp">
+            </EditText>
+        </LinearLayout>
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="312dp"
+            android:text="원"
+            android:textSize="17dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="24dp">
+        </TextView>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/sf"
+        android:text="용돈 추가하기"
+        android:textSize="65px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
