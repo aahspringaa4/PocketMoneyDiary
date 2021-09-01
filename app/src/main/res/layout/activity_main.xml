@@ -28,7 +28,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/pink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <TextView
             android:id="@+id/pocket"
             android:layout_width="165dp"
@@ -133,9 +132,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="47dp"
                     android:layout_gravity="right"
+                    android:layout_marginRight="39dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
                     android:layout_marginRight="18dp"
                     android:gravity="center"
-                    android:text="0 원"
+                    android:text=" 원"
                     android:textColor="@color/black"
                     android:textSize="18dp">
                 </TextView>
@@ -162,9 +171,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="47dp"
                     android:layout_gravity="right"
+                    android:layout_marginRight="39dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
                     android:layout_marginRight="18dp"
                     android:gravity="center"
-                    android:text="0 원"
+                    android:text=" 원"
                     android:textColor="@color/black"
                     android:textSize="18dp">
                 </TextView>
@@ -192,9 +211,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="47dp"
                     android:layout_gravity="right"
+                    android:layout_marginRight="39dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
                     android:layout_marginRight="18dp"
                     android:gravity="center"
-                    android:text="0 원"
+                    android:text=" 원"
                     android:textColor="@color/black"
                     android:textSize="18dp">
                 </TextView>
@@ -222,9 +251,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="47dp"
                     android:layout_gravity="right"
+                    android:layout_marginRight="39dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
                     android:layout_marginRight="18dp"
                     android:gravity="center"
-                    android:text="0 원"
+                    android:text=" 원"
                     android:textColor="@color/black"
                     android:textSize="18dp">
                 </TextView>
