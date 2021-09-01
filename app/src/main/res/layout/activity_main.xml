@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/pink"
+        android:layout_width="470dp"
+        android:layout_height="245dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pint" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:layout_marginBottom="60dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/pocket"
+            android:layout_width="165dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext"
+            android:text="용돈 추가"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="165dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="62dp"
+            android:background="@drawable/edittext"
+            android:text="총 잔액"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="165dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edittext"
+            android:text="저축 하기"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/pink"
+        app:srcCompat="@drawable/pig" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="389dp"
+        android:layout_height="497dp"
+        android:layout_marginBottom="9dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="23dp"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="270dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textvew"
+                android:fontFamily="@font/bmhanna"
+                android:gravity="center"
+                android:text="나의 용돈 생활"
+                android:textAlignment="center"
+                android:textSize="22dp"></Button>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_get"
+                    android:layout_width="270dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/textview"
+                    android:fontFamily="@font/app_font"
+                    android:gravity="center_vertical"
+                    android:text="  총 수입"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/SumGet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="18dp"
+                    android:gravity="center"
+                    android:text="0 원"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="270dp"
+                android:layout_height="47dp"
+                android:background="@drawable/textview">
+
+                <TextView
+                    android:id="@+id/postmoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-0dp"
+                    android:fontFamily="@font/app_font"
+                    android:gravity="center_vertical"
+                    android:text="  총 지출"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+                <TextView
+                    android:id="@+id/SumPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="18dp"
+                    android:gravity="center"
+                    android:text="0 원"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="270dp"
+                android:layout_height="47dp"
+                android:background="@drawable/textview">
+
+                <TextView
+                    android:id="@+id/savemoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-0dp"
+                    android:fontFamily="@font/app_font"
+                    android:gravity="center_vertical"
+                    android:text="  저축 금액"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/SumSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="18dp"
+                    android:gravity="center"
+                    android:text="0 원"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="270dp"
+                android:layout_height="47dp"
+                android:background="@drawable/button">
+
+                <TextView
+                    android:id="@+id/nowmoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-0dp"
+                    android:fontFamily="@font/app_font"
+                    android:gravity="center_vertical"
+                    android:text="  현재 잔액"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/SumMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="18dp"
+                    android:gravity="center"
+                    android:text="0 원"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+                </TextView>
+            </FrameLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="320dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/money"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter">
+        </ImageButton>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="364dp"
+        android:layout_height="67dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="-3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fragme" />
+
+    <RelativeLayout
+        android:layout_width="364dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="-3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2">
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageButton
+                android:id="@+id/bt_scan"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fragmetwo"
+                android:text="메뉴 1"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/menu"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fragmethree"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/btn_3"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fragmefour"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/btn_4"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fragmefive"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/btn_5"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fragmesiz"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/btn_6"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fragmeseven"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/btn_7"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fragmeeight"
+                android:visibility="visible" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
