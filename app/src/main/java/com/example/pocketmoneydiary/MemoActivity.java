@@ -32,13 +32,18 @@ public class MemoActivity extends AppCompatActivity {
         recyclerView.setAdapter(memoAdapter); // 어댑터를 mainAdapter로 설정
         arrayList = new ArrayList<>();
 
-        itemadd();
-
         back = (ImageButton)findViewById(R.id.back);
         topic = (TextView)findViewById(R.id.textView2);
         back.bringToFront();
         topic.bringToFront();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        itemadd();
+    }
+
     private void itemadd() {
         MemoData MemoData;
 
