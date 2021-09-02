@@ -90,7 +90,6 @@ public class ScanActivity extends AppCompatActivity {
                 a = 0;
                 if (!Money.getText().toString().equals("")) {
                     str = String.valueOf(Money.getText());
-                    Log.d("결과", "성공");
                     finish();
                     a++;
                     MainActivity.tempBoolean2 = true;
