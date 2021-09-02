@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     String st_pocket;
     TextView money;
     ImageButton bt_scan, menu;
-    ImageButton setting;
+    ImageButton setting, memo;
 
     public static Boolean tempBoolean = false;
     public static Boolean tempBoolean1 = false;
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         SumSave = (TextView) findViewById(R.id.SumSave);
         SumMoney = (TextView) findViewById(R.id.SumMoney);
         setting = (ImageButton) findViewById(R.id.btn_7);
+        memo = (ImageButton)findViewById(R.id.btn_4);
 
         money.bringToFront();
         pocket.bringToFront();
@@ -92,7 +93,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
+        memo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MemoActivity.class);
+                startActivity(intent);
+            }
+        });
+
         SharedPreferences pref = getSharedPreferences("save1", 0);
         Get1 = pref.getString("get", String.valueOf(0));
         Post1 = pref.getString("post", String.valueOf(0));
