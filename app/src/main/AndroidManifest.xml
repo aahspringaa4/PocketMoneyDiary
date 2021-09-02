@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketMoneyDiary">
-        <activity android:name=".SaveActivity"></activity>
+        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".SaveActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".goalActivity" />
         <activity android:name=".NumberPadActivity" />
