@@ -29,7 +29,6 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view); // View를 가져온다.
-
         return holder;
     }
 
