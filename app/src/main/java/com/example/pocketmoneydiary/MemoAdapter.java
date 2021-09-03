@@ -44,14 +44,14 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
         return (null != arraylist ? arraylist.size() : 0);
     } // arraylist가 null이 아닐 경우 arraylist.size() 반환
 
-    public void remove(int position) {
-        try { // 예외사항이 생겨도 강제실행
-            arraylist.remove(position);
-            notifyItemRemoved(position); // 새로고침
-        } catch (IndexOutOfBoundsException ex) {
-            ex.printStackTrace();
-        }
-    }
+//    public void remove(int position) {
+//        try { // 예외사항이 생겨도 강제실행
+//            arraylist.remove(position);
+//            notifyItemRemoved(position); // 새로고침
+//        } catch (IndexOutOfBoundsException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         protected TextView tv_content;
