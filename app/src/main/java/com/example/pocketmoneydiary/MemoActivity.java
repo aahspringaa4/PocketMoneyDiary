@@ -15,6 +15,7 @@ public class MemoActivity extends AppCompatActivity {
 
     TextView topic;
     ImageButton back;
+
     private ArrayList<MemoData> arrayList; // MaindData를 담은 배열 리스트인 arrayList를 선언
     private MemoAdapter memoAdapter; // 인스턴스 mainAdapter를 선언
     private RecyclerView recyclerView;
