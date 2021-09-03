@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketMoneyDiary">
-        <activity android:name=".MemoActivity"></activity>
+        <activity android:name=".MemoScanActivity"></activity>
+        <activity android:name=".MemoActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".SaveActivity" />
         <activity android:name=".SettingActivity" />
