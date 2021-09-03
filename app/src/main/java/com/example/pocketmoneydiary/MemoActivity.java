@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 public class MemoActivity extends AppCompatActivity {
 
     TextView topic;
-    ImageButton back;
+    ImageButton back, go;
 
     private ArrayList<MemoData> arrayList; // MaindData를 담은 배열 리스트인 arrayList를 선언
     private MemoAdapter memoAdapter; // 인스턴스 mainAdapter를 선언
@@ -33,10 +35,26 @@ public class MemoActivity extends AppCompatActivity {
         recyclerView.setAdapter(memoAdapter); // 어댑터를 mainAdapter로 설정
         arrayList = new ArrayList<>();
 
+        go = (ImageButton)findViewById(R.id.go);
         back = (ImageButton)findViewById(R.id.back);
         topic = (TextView)findViewById(R.id.textView2);
         back.bringToFront();
         topic.bringToFront();
+        
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MemoActivity.this, MemoScanActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
