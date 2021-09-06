@@ -66,13 +66,6 @@ public class MemoActivity extends AppCompatActivity {
     private void itemadd() {
         MemoData MemoData;
 
-        MemoData = new MemoData("2021년 9월 02일", "정윤이한테 만원 받아야함");
-        arrayList.add(MemoData);
-        Log.d("결과", "성공");
-
-        MemoData = new MemoData("2021년 9월 02일", "세현이한테 만원 줘야함");
-        arrayList.add(MemoData);
-
         memoAdapter.notifyDataSetChanged(); // 새로고침
     }
 }
