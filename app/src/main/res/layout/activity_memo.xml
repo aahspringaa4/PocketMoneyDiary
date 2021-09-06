@@ -32,7 +32,8 @@
         android:text="도움말"
         android:textSize="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></Button>
+        app:layout_constraintTop_toTopOf="parent">
+    </Button>
 
     <TextView
         android:id="@+id/textView2"
