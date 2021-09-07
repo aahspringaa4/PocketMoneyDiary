@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4"></Button>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/memo"
         android:layout_width="327dp"
         android:layout_height="470dp"
         android:layout_marginStart="33dp"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nowaday" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/save"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="15dp"
@@ -102,6 +102,6 @@
         android:textSize="59px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/memo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
