@@ -17,7 +17,7 @@ public class MemoActivity extends AppCompatActivity {
 
     TextView topic;
     ImageButton back, go;
-
+    private int REQUEST_TEST = 200;
     private ArrayList<MemoData> arrayList; // MaindData를 담은 배열 리스트인 arrayList를 선언
     private MemoAdapter memoAdapter; // 인스턴스 mainAdapter를 선언
     private RecyclerView recyclerView;
@@ -31,8 +31,8 @@ public class MemoActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager); // recyclerView를 통해 리사이클러뷰를 지정
-        memoAdapter = new MemoAdapter(arrayList); // 인스턴스 생성
-        recyclerView.setAdapter(memoAdapter); // 어댑터를 mainAdapter로 설정
+        memoAdapter = new MemoAdapter(arrayList); // 인스턴스
+        recyclerView.setAdapter(memoAdapter); // 어댑터를 mainAdapter로
         arrayList = new ArrayList<>();
 
         go = (ImageButton)findViewById(R.id.go);
@@ -51,10 +51,18 @@ public class MemoActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MemoActivity.this, MemoScanActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), MemoScanActivity.class);
+                //startActivity(intent); // 해당 액티비티에 단순 값 전달과 이동이면 startActivity
+                startActivityForResult(intent,REQUEST_TEST) ; // 메모를 작성하고 결과값을 받기 위해
             }
         });
+    }
+
+    public static void memo() {
+
+//        adapter.array.add(getText);
+//        adapter.notifyDataSetChanged();
+//        getTextET.setText("");
     }
 
     @Override
