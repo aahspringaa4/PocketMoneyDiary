@@ -1,3 +1,5 @@
+package com.example.pocketmoneydiary;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 
