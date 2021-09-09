@@ -17,19 +17,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Array;
+import java.net.CookieStore;
 import java.util.ArrayList;
 
 public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHolder> {
-    private ArrayList<MemoData> mcontext;
+    public ArrayList mcontext;
     private Activity Mc;
 
-    private ArrayList<MemoData> items = new ArrayList<>(); // MainData를 리스트배열 arraylist에 넣음
+    ArrayList<String> items = new ArrayList<String>(); // MainData를 리스트배열 arraylist에 넣음
 
-    public MemoAdapter(ArrayList<MemoData> context) { // 생성자
+    public MemoAdapter(ArrayList<String> context) { // 생성자
         mcontext = context;
     }
 
-    public void addItem(MemoData item) {
+    public void addItem(String item) {
         items.add(item);
     }
     @NonNull // null을 허용하지 않는다.
@@ -45,14 +47,12 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
         return vh;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull final MemoAdapter.CustomViewHolder holder, final int position) {
-        MemoData item = items.get(position);
-        // 메모 아이템 xml상에 메모 데이터가 적용되도록 세팅
-//        holder.(item);
 
-        // 메모 아이템 안에 있는 보기 버튼을 클릭하여 상세보기(ViewActivity)로 이동
+        holder.tv_today.setText(items.get(position));
+        holder.tv_content.setText(items.get(position));
+
         holder.patch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
