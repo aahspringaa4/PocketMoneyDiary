@@ -14,4 +14,10 @@ public class MemoData {
     public String getTv_content() {
         return tv_content;
     }
+    public String setTv_today() {
+        return tv_today;
+    }
+    public String setTv_content() {
+        return tv_content;
+    }
 }
