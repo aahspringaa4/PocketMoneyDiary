@@ -61,8 +61,6 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
                 Mc.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
