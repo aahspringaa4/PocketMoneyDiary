@@ -1,6 +1,9 @@
 package com.example.pocketmoneydiary;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -16,32 +20,54 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHolder> {
-    private ArrayList<MemoData> arraylist; // MainData를 리스트배열 arraylist에 넣음
+    private ArrayList<MemoData> mcontext;
+    private Activity Mc;
 
-    public MemoAdapter(ArrayList<MemoData> arraylist) { // 생성자
-        this.arraylist = arraylist;
+    private ArrayList<MemoData> items = new ArrayList<>(); // MainData를 리스트배열 arraylist에 넣음
+
+    public MemoAdapter(ArrayList<MemoData> context) { // 생성자
+        mcontext = context;
     }
 
+    public void addItem(MemoData item) {
+        items.add(item);
+    }
     @NonNull // null을 허용하지 않는다.
     @Override
     public MemoAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // ViewHolder와 레이아웃 파일을 연결해주는 역할
+        Context context = parent.getContext();
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false);
-        CustomViewHolder holder = new CustomViewHolder(view); // View를 가져온다.
-        return holder;
+        // 미리 만들어 놓은 item_rv_memo.xml 기입
+        View view = inflater.inflate(R.layout.item_view, parent, false) ;
+        MemoAdapter.CustomViewHolder vh = new MemoAdapter.CustomViewHolder(view) ;
+
+        return vh;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
-        holder.tv_content.setText(arraylist.get(position).getTv_content());
-        holder.tv_today.setText(arraylist.get(position).getTv_today());
-        Log.d("결과", "성공 1");
+    public void onBindViewHolder(@NonNull final MemoAdapter.CustomViewHolder holder, final int position) {
+        MemoData item = items.get(position);
+        // 메모 아이템 xml상에 메모 데이터가 적용되도록 세팅
+//        holder.(item);
+
+        // 메모 아이템 안에 있는 보기 버튼을 클릭하여 상세보기(ViewActivity)로 이동
+        holder.patch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Mc, MemoScanActivity.class);
+                intent.putExtra("key",holder.tv_content.getText().toString());
+                Mc.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
     public int getItemCount() {
-        return (null != arraylist ? arraylist.size() : 0);
+        return (null != items ? items.size() : 0);
     } // arraylist가 null이 아닐 경우 arraylist.size() 반환
 
 //    public void remove(int position) {
@@ -56,11 +82,13 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         protected TextView tv_content;
         protected TextView tv_today;
+        protected TextView patch;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tv_today = (TextView) itemView.findViewById(R.id.today);
             this.tv_content = (TextView) itemView.findViewById(R.id.content);
+            this.patch = (TextView) itemView.findViewById(R.id.patch);
         }
     }
 }
