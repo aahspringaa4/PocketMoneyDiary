@@ -28,8 +28,13 @@ public class MemoScanActivity extends AppCompatActivity {
     ImageButton back;
     public static Button nowaday;
     Button save;
+    public static int a = 0;
     public static EditText memo;
+    public static String str, stt;
     PreferenceManager pref;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,29 +81,12 @@ public class MemoScanActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                a = 0;
                 if(memo.getText().length()>0 && nowaday.getText().length() > 0){
-                    // 저장 버튼을 눌러
-                    // 작성한 editText를 저장
-                    String edit_title = nowaday.getText().toString();
-                    String edit_content = memo.getText().toString();
-                    // String 값을 JSONObject로 변환하여 사용할 수 있도록 메모의 제목과 타이틀을 JSON 형식로 저장
-                    String save_form = "{\"day\":\""+edit_title+"\",\"content\":\""+edit_content+"\"}";
-
-                    // key값이 겹치지 않도록 현재 시간으로 부여
-                    long now = System.currentTimeMillis();
-                    Date mDate = new Date(now);
-                    SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"    );
-                    String getTime = simpleDate.format(mDate).toString();
-
-                    Log.d("WriteActivity","제목 : "+edit_title+", 내용 : "+edit_content+", 현재시간 : "+getTime);
-                    //PreferenceManager 클래스에서 저장에 관한 메소드를 관리
-//                    pref.setString(getApplication(),getTime,save_form);
-
-                    // Intent로 값을 MainActivity에 전달
-                    Intent intent = new Intent();
-                    intent.putExtra("get",getTime);
-                    intent.putExtra("memo2",edit_title);
-                    setResult(RESULT_OK, intent);
+                    String str = nowaday.getText().toString();
+                    String stt = memo.getText().toString();
+                    a++;
+                    MemoActivity.Scan();
                     finish();
                 }else{
                     Toast.makeText(MemoScanActivity.this, "날짜 또는 메모 내용을 입력해주세요.", Toast.LENGTH_SHORT).show();
@@ -106,32 +94,5 @@ public class MemoScanActivity extends AppCompatActivity {
             }
         });
 
-        // 인텐트로 리사이클러뷰 목록 하나의 키값을 받는다
-        Intent intent = getIntent();
-        String key = intent.getStringExtra("key");
-
-        String value = pref.getString(getApplication(),key);
-        try {
-            JSONObject jsonObject = new JSONObject(value);
-            String get = (String) jsonObject.getString("get");
-            String content = (String) jsonObject.getString("memo2");
-            nowaday.setText(get);
-            memo.setText(content);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        SharedPreferences sharedPreferences = getSharedPreferences("save2", 0);
-        SharedPreferences.Editor pref1 = sharedPreferences.edit();
-        String day = nowaday.getText().toString();
-        String memo4 = memo.getText().toString();
-
-        pref1.putString("get", day);
-        pref1.putString("memo2", memo4);
     }
 }
