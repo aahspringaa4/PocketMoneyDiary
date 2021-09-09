@@ -63,8 +63,4 @@ public class MemoActivity extends AppCompatActivity {
             }
         });
     }
-
-    public static void Scan() {
-        adapter.items.add(Integer.parseInt(MemoScanActivity.str), MemoScanActivity.stt);
-    }
 }
