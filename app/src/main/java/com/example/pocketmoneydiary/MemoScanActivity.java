@@ -26,12 +26,12 @@ import java.util.Date;
 public class MemoScanActivity extends AppCompatActivity {
     TextView topic;
     ImageButton back;
+    private int Request_Re = 202;
     public static Button nowaday;
     Button save;
     public static int a = 0;
     public static EditText memo;
     public static String str, stt;
-    PreferenceManager pref;
 
 
 
@@ -86,13 +86,11 @@ public class MemoScanActivity extends AppCompatActivity {
                     String str = nowaday.getText().toString();
                     String stt = memo.getText().toString();
                     a++;
-                    MemoActivity.Scan();
                     finish();
                 }else{
                     Toast.makeText(MemoScanActivity.this, "날짜 또는 메모 내용을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
     }
 }
