@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -24,7 +25,6 @@ public class MemoActivity extends AppCompatActivity {
 
     TextView topic;
     ImageButton back, go;
-    private int REQUEST_TEST = 200;
     private ArrayList<String> arrayList; // MaindData를 담은 배열 리스트인 arrayList를 선언
     private static MemoAdapter adapter; // 인스턴스 mainAdapter를 선언
     private RecyclerView recyclerView;
@@ -36,7 +36,7 @@ public class MemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_memo);
 
         recyclerView = (RecyclerView) findViewById(R.id.rv);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager); // recyclerView를 통해 리사이클러뷰를 지정
         adapter = new MemoAdapter(arrayList); // 인스턴스
         recyclerView.setAdapter(adapter); // 어댑터를 mainAdapter로
@@ -62,5 +62,7 @@ public class MemoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 }
