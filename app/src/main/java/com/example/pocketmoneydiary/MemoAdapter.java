@@ -44,7 +44,6 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
         // 미리 만들어 놓은 item_rv_memo.xml 기입
         View view = inflater.inflate(R.layout.item_view, parent, false) ;
         MemoAdapter.CustomViewHolder vh = new MemoAdapter.CustomViewHolder(view) ;
-
         return vh;
     }
 
