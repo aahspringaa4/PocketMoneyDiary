@@ -27,6 +27,7 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
     private Activity Mc;
 
     ArrayList<String> items = new ArrayList<String>(); // MainData를 리스트배열 arraylist에 넣음
+    ArrayList<String> item = new ArrayList<String>(); // MainData를 리스트배열 arraylist에 넣음
 
     public MemoAdapter(ArrayList<String> context) { // 생성자
         mcontext = context;
@@ -35,6 +36,7 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
     public void addItem(String item) {
         items.add(item);
     }
+
     @NonNull // null을 허용하지 않는다.
     @Override
     public MemoAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,7 +53,7 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
     public void onBindViewHolder(@NonNull final MemoAdapter.CustomViewHolder holder, final int position) {
 
         holder.tv_today.setText(items.get(position));
-        holder.tv_content.setText(items.get(position));
+        holder.tv_content.setText(item.get(position));
 
         holder.patch.setOnClickListener(new View.OnClickListener() {
             @Override
