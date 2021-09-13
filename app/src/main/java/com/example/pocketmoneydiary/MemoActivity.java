@@ -62,7 +62,14 @@ public class MemoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
+    }
+    public static void post() {
+        String getDate = MemoScanActivity.nowaday.getText().toString();
+        String getMemo = MemoScanActivity.memo.getText().toString();
+        adapter.items.add(getDate);
+        adapter.item.add(getMemo);
+        MemoScanActivity.nowaday.setText("");
+        MemoScanActivity.memo.setText("");
+        adapter.notifyDataSetChanged();
     }
 }
