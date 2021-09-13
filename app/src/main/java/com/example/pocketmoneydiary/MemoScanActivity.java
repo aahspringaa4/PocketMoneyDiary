@@ -85,6 +85,7 @@ public class MemoScanActivity extends AppCompatActivity {
                 if(memo.getText().length()>0 && nowaday.getText().length() > 0){
                     String str = nowaday.getText().toString();
                     String stt = memo.getText().toString();
+                    MemoActivity.post();
                     a++;
                     finish();
                 }else{
