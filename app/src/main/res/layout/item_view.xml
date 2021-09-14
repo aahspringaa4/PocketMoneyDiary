@@ -55,6 +55,7 @@
         android:id="@+id/content"
         android:layout_width="340dp"
         android:layout_height="80dp"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/content"
