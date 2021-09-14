@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,16 +19,20 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.InputStream;
 import java.util.Calendar;
 
 public class ScanActivity extends AppCompatActivity {
 
+    ImageView iv_main;
+    private static final int REQUEST_CODE = 0;
     AlertDialog.Builder builder;
     private static TextView year;
     ImageButton back;
@@ -53,6 +60,17 @@ public class ScanActivity extends AppCompatActivity {
         Money = (EditText)findViewById(R.id.Money);
         commit = findViewById(R.id.commit);
         totalm = (TextView)findViewById(R.id.totalm);
+        iv_main = findViewById(R.id.iv_main);
+
+        iv_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT); // 갤러리 열기
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,5 +166,26 @@ public class ScanActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                try {
+                    InputStream in = getContentResolver().openInputStream(data.getData());
+
+                    Bitmap img = BitmapFactory.decodeStream(in);
+                    in.close();
+
+                    iv_main.setImageBitmap(img);
+                } catch (Exception e) {
+
+                }
+            } else if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(this, "사진 선택을 취소하였습니다.", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
