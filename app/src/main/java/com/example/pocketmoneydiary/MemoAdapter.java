@@ -44,11 +44,11 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
     @Override
     public MemoAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // 미리 만들어 놓은 item_rv_memo.xml 기입
-        View view = inflater.inflate(R.layout.item_view, parent, false) ;
-        MemoAdapter.CustomViewHolder vh = new MemoAdapter.CustomViewHolder(view) ;
+        View view = inflater.inflate(R.layout.item_view, parent, false);
+        MemoAdapter.CustomViewHolder vh = new MemoAdapter.CustomViewHolder(view);
         return vh;
     }
 
@@ -62,7 +62,7 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Mc, MemoScanActivity.class);
-                intent.putExtra("key",holder.tv_content.getText().toString());
+                intent.putExtra("key", holder.tv_content.getText().toString());
                 Mc.startActivity(intent);
             }
         });
@@ -93,6 +93,7 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.CustomViewHold
         protected TextView tv_today;
         protected TextView patch;
         protected TextView delete;
+
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tv_today = (TextView) itemView.findViewById(R.id.today);
