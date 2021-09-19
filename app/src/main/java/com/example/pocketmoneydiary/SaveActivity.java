@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SaveActivity extends AppCompatActivity {
-    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16, commit;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, commit;
     public static TextView textView, textView2;
     int num1 = 0;
     int num2 = 0;
@@ -53,7 +53,7 @@ public class SaveActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("1");
@@ -62,7 +62,7 @@ public class SaveActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("2");
@@ -71,7 +71,7 @@ public class SaveActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("3");
@@ -80,26 +80,23 @@ public class SaveActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper) {
+                if (checkOper) {
                     num2 = Integer.parseInt(textView.getText().toString());
                     textView2.append(Integer.toString(num2));
                     textView2.append("=");
                     textView.setText(null);
                     checkOper = true;
-                    if(plus){
-                        textView.append(Integer.toString(num1+num2));
+                    if (plus) {
+                        textView.append(Integer.toString(num1 + num2));
                         plus = false;
-                    }
-                    else if(minus){
-                        textView.append(Integer.toString(num1-num2));
+                    } else if (minus) {
+                        textView.append(Integer.toString(num1 - num2));
                         minus = false;
-                    }
-                    else if(gob){
-                        textView.append(Integer.toString(num1*num2));
+                    } else if (gob) {
+                        textView.append(Integer.toString(num1 * num2));
                         gob = false;
-                    }
-                    else if (nanu) {
-                        textView.append(Integer.toString(num1/num2));
+                    } else if (nanu) {
+                        textView.append(Integer.toString(num1 / num2));
                         nanu = false;
                     }
                 }
@@ -108,7 +105,7 @@ public class SaveActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("4");
@@ -117,7 +114,7 @@ public class SaveActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("5");
@@ -126,7 +123,7 @@ public class SaveActivity extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("6");
@@ -135,7 +132,7 @@ public class SaveActivity extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!checkOper) {
+                if (!checkOper) {
                     onClickMethod(" / ");
                     nanu = true;
                 }
@@ -144,7 +141,7 @@ public class SaveActivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("7");
@@ -153,7 +150,7 @@ public class SaveActivity extends AppCompatActivity {
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("8");
@@ -162,7 +159,7 @@ public class SaveActivity extends AppCompatActivity {
         btn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("9");
@@ -171,7 +168,7 @@ public class SaveActivity extends AppCompatActivity {
         btn12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!checkOper) {
+                if (!checkOper) {
                     onClickMethod(" x ");
                     gob = true;
                 }
@@ -181,7 +178,7 @@ public class SaveActivity extends AppCompatActivity {
         btn13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("00");
@@ -190,7 +187,7 @@ public class SaveActivity extends AppCompatActivity {
         btn14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkOper){
+                if (checkOper) {
                     textView.setText(null);
                 }
                 textView.append("0");
@@ -199,7 +196,7 @@ public class SaveActivity extends AppCompatActivity {
         btn15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!checkOper) {
+                if (!checkOper) {
                     onClickMethod(" + ");
                     plus = true;
                 }
