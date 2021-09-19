@@ -37,7 +37,7 @@ public class ScanActivity extends AppCompatActivity {
     private static TextView year;
     ImageButton back;
     Button nowaday;
-    Button cate,commit;
+    Button cate, commit;
     String[] cates;
     EditText Money;
     TextView totalm;
@@ -54,12 +54,12 @@ public class ScanActivity extends AppCompatActivity {
         year = (TextView) findViewById(R.id.year);
         month = (TextView) findViewById(R.id.month);
         day = (TextView) findViewById(R.id.day);
-        nowaday = (Button)findViewById(R.id.nowaday);
+        nowaday = (Button) findViewById(R.id.nowaday);
         cate = (Button) findViewById(R.id.cate);
-        Money = (EditText)findViewById(R.id.Money);
-        Money = (EditText)findViewById(R.id.Money);
+        Money = (EditText) findViewById(R.id.Money);
+        Money = (EditText) findViewById(R.id.Money);
         commit = findViewById(R.id.commit);
-        totalm = (TextView)findViewById(R.id.totalm);
+        totalm = (TextView) findViewById(R.id.totalm);
         iv_main = findViewById(R.id.iv_main);
 
         iv_main.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +91,7 @@ public class ScanActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                                   int dayOfMonth) {
-                                nowaday.setText(String.valueOf(year) + "년 " + String.valueOf(monthOfYear + 1)+ "월 " + String.valueOf(dayOfMonth )+ "일");
+                                nowaday.setText(String.valueOf(year) + "년 " + String.valueOf(monthOfYear + 1) + "월 " + String.valueOf(dayOfMonth) + "일");
                             }
                         };
 
@@ -126,7 +126,7 @@ public class ScanActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         totalm.setText("$ " + MainActivity.SumMoney.getText());
     }
@@ -148,7 +148,7 @@ public class ScanActivity extends AppCompatActivity {
         return super.dispatchTouchEvent(Money);
     }
 
-    public void showDialog(){
+    public void showDialog() {
         cates = getResources().getStringArray(R.array.cate);
 
         builder = new AlertDialog.Builder(ScanActivity.this);
@@ -157,7 +157,7 @@ public class ScanActivity extends AppCompatActivity {
 
         // 다이얼로그에 리스트 담기
 
-        builder.setItems(cates,new DialogInterface.OnClickListener(){
+        builder.setItems(cates, new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
