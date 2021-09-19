@@ -34,17 +34,16 @@ public class MemoScanActivity extends AppCompatActivity {
     public static String str, stt;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo_scan);
 
-        back = (ImageButton)findViewById(R.id.back);
-        topic = (TextView)findViewById(R.id.textView2);
-        nowaday = (Button)findViewById(R.id.nowaday);
-        save = (Button)findViewById(R.id.save);
-        memo = (EditText)findViewById(R.id.memo);
+        back = (ImageButton) findViewById(R.id.back);
+        topic = (TextView) findViewById(R.id.textView2);
+        nowaday = (Button) findViewById(R.id.nowaday);
+        save = (Button) findViewById(R.id.save);
+        memo = (EditText) findViewById(R.id.memo);
         back.bringToFront();
         topic.bringToFront();
 
@@ -67,7 +66,7 @@ public class MemoScanActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             public void onDateSet(DatePicker view, int year, int monthOfYear,
                                                   int dayOfMonth) {
-                                nowaday.setText(String.valueOf(year) + "년 " + String.valueOf(monthOfYear + 1)+ "월 " + String.valueOf(dayOfMonth )+ "일");
+                                nowaday.setText(String.valueOf(year) + "년 " + String.valueOf(monthOfYear + 1) + "월 " + String.valueOf(dayOfMonth) + "일");
                             }
                         };
 
@@ -82,13 +81,13 @@ public class MemoScanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 a = 0;
-                if(memo.getText().length()>0 && nowaday.getText().length() > 0){
+                if (memo.getText().length() > 0 && nowaday.getText().length() > 0) {
                     String str = nowaday.getText().toString();
                     String stt = memo.getText().toString();
                     MemoActivity.post();
                     a++;
                     finish();
-                }else{
+                } else {
                     Toast.makeText(MemoScanActivity.this, "날짜 또는 메모 내용을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
