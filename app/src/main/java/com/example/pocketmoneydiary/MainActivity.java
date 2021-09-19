@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         SumSave = (TextView) findViewById(R.id.SumSave);
         SumMoney = (TextView) findViewById(R.id.SumMoney);
         setting = (ImageButton) findViewById(R.id.btn_7);
-        memo = (ImageButton)findViewById(R.id.btn_4);
+        memo = (ImageButton) findViewById(R.id.btn_4);
 
         money.bringToFront();
         pocket.bringToFront();
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        if (tempBoolean3){
+        if (tempBoolean3) {
             MainActivity.SumGet.setText("0");
             MainActivity.SumPost.setText("0");
             MainActivity.SumSave.setText("0");
