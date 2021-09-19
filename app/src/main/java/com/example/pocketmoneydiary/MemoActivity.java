@@ -63,6 +63,7 @@ public class MemoActivity extends AppCompatActivity {
             }
         });
     }
+
     public static void post() {
         String getDate = MemoScanActivity.nowaday.getText().toString();
         String getMemo = MemoScanActivity.memo.getText().toString();
