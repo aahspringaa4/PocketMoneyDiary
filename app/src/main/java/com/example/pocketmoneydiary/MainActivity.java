@@ -1,24 +1,22 @@
 package com.example.pocketmoneydiary;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
+
+    PackageManager pm = getPackageManager();
+    String packageName = "ButtonFragment";
+    String packageName2 = "Memo";
+    String packageName3 = "MoneyScan";
 
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backPressedTime;
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     TextView money;
     ImageButton bt_scan, menu;
     ImageButton setting, memo;
-
+    ImageButton canlender;
     public static Boolean tempBoolean = false;
     public static Boolean tempBoolean1 = false;
     public static Boolean tempBoolean2 = false;
@@ -57,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         SumMoney = (TextView) findViewById(R.id.SumMoney);
         setting = (ImageButton) findViewById(R.id.btn_7);
         memo = (ImageButton) findViewById(R.id.btn_4);
+        canlender = (ImageButton) findViewById(R.id.btn_3);
 
         money.bringToFront();
         pocket.bringToFront();
@@ -98,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MemoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        canlender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CalenderActivity.class);
                 startActivity(intent);
             }
         });
