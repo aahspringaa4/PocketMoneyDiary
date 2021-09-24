@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketMoneyDiary">
         <activity android:name=".CalenderActivity"></activity>
-        <activity android:name=".MemoScanActivity" />
-        <activity android:name=".MemoActivity" />
+        <activity android:name="Memo.MemoScanActivity" />
+        <activity android:name="Memo.MemoActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".SaveActivity" />
         <activity android:name=".SettingActivity" />
