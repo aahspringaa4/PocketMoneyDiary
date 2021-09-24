@@ -1,6 +1,4 @@
-package Memo;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.pocketmoneydiary;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -12,7 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pocketmoneydiary.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
