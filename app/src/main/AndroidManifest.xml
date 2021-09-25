@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketMoneyDiary">
-        <activity android:name=".CalenderActivity"></activity>
+        <activity android:name=".calender.CalenderActivity"></activity>
         <activity android:name="Memo.MemoActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".SaveActivity" />
