@@ -22,6 +22,7 @@
     </ImageButton>
 
     <Button
+        android:id="@+id/help"
         android:layout_width="75dp"
         android:layout_height="45dp"
         android:layout_marginStart="280dp"
