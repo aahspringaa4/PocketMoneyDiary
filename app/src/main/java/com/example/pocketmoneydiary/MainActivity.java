@@ -15,7 +15,7 @@ import com.example.pocketmoneydiary.calender.CalenderActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    PackageManager pm = getPackageManager();
+//    PackageManager pm = getPackageManager();
     String packageName = "ButtonFragment";
     String packageName2 = "Memo";
     String packageName3 = "MoneyScan";
