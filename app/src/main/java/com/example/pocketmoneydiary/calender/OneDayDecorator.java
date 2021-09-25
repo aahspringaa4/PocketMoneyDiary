@@ -1,4 +1,4 @@
-package com.example.pocketmoneydiary.calender;
+package com.project.sample_calendar.decorators;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
