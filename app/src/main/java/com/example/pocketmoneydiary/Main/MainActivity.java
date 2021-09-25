@@ -1,17 +1,22 @@
-package com.example.pocketmoneydiary;
+package com.example.pocketmoneydiary.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pocketmoneydiary.calender.CalenderActivity;
+import com.example.pocketmoneydiary.ButtomFragment.ScanActivity;
+import com.example.pocketmoneydiary.ButtomFragment.SettingActivity;
+import com.example.pocketmoneydiary.NumberPad.NumberPadActivity;
+import com.example.pocketmoneydiary.NumberPad.SaveActivity;
+import com.example.pocketmoneydiary.ButtomFragment.CalenderActivity;
+import com.example.pocketmoneydiary.R;
+import com.example.pocketmoneydiary.memo.MemoActivity;
 
 public class MainActivity extends AppCompatActivity {
 

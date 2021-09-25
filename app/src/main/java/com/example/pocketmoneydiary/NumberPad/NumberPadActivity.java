@@ -1,17 +1,16 @@
-package com.example.pocketmoneydiary;
+package com.example.pocketmoneydiary.NumberPad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pocketmoneydiary.Main.MainActivity;
+import com.example.pocketmoneydiary.R;
 
 public class NumberPadActivity extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, commit;

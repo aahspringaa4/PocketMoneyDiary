@@ -1,4 +1,4 @@
-package com.example.pocketmoneydiary;
+package com.example.pocketmoneydiary.ButtomFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.pocketmoneydiary.Main.MainActivity;
+import com.example.pocketmoneydiary.R;
 
 public class SettingActivity extends AppCompatActivity {
 
