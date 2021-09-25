@@ -3,6 +3,7 @@ package com.example.pocketmoneydiary.Memo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -10,12 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pocketmoneydiary.ButtomFragment.HelpActivity;
 import com.example.pocketmoneydiary.R;
 
 import java.util.ArrayList;
 
 public class MemoActivity extends AppCompatActivity {
 
+    Button help;
     TextView topic;
     ImageButton back, go;
     private ArrayList<String> arrayList; // MaindData를 담은 배열 리스트인 arrayList를 선언
@@ -28,6 +31,7 @@ public class MemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo);
 
+        help = findViewById(R.id.help);
         recyclerView = (RecyclerView) findViewById(R.id.rv);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager); // recyclerView를 통해 리사이클러뷰를 지정
@@ -40,6 +44,14 @@ public class MemoActivity extends AppCompatActivity {
         topic = (TextView) findViewById(R.id.textView2);
         back.bringToFront();
         topic.bringToFront();
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MemoActivity.this, HelpActivity.class);
+                startActivity(intent);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
