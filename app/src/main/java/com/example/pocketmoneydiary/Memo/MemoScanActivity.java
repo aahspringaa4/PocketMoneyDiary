@@ -1,4 +1,4 @@
-package com.example.pocketmoneydiary.memo;
+package com.example.pocketmoneydiary.Memo;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;

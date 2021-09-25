@@ -16,7 +16,7 @@ import com.example.pocketmoneydiary.NumberPad.NumberPadActivity;
 import com.example.pocketmoneydiary.NumberPad.SaveActivity;
 import com.example.pocketmoneydiary.ButtomFragment.CalenderActivity;
 import com.example.pocketmoneydiary.R;
-import com.example.pocketmoneydiary.memo.MemoActivity;
+import com.example.pocketmoneydiary.Memo.MemoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
