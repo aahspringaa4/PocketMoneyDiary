@@ -1,4 +1,4 @@
-package com.example.pocketmoneydiary.calender;
+package com.example.pocketmoneydiary.ButtomFragment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +10,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.pocketmoneydiary.MainActivity;
 import com.example.pocketmoneydiary.R;
+import com.example.pocketmoneydiary.calender.EventDecorator;
+import com.example.pocketmoneydiary.calender.OneDayDecorator;
+import com.example.pocketmoneydiary.calender.SaturdayDecorator;
+import com.example.pocketmoneydiary.calender.SundayDecorator;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -119,7 +122,7 @@ public class CalenderActivity extends AppCompatActivity {
                 return;
             }
 
-            materialCalendarView.addDecorator(new EventDecorator(Color.GREEN, calendarDays, MainActivity.CalenderActivity.this));
+            materialCalendarView.addDecorator(new EventDecorator(Color.GREEN, calendarDays, CalenderActivity.this));
         }
     }
 }
