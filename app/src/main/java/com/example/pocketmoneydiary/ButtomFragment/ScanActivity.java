@@ -29,6 +29,7 @@ import java.util.Calendar;
 
 public class ScanActivity extends AppCompatActivity {
 
+    Button btn_2;
     ImageView iv_main;
     private static final int REQUEST_CODE = 0;
     AlertDialog.Builder builder;
@@ -59,6 +60,7 @@ public class ScanActivity extends AppCompatActivity {
         commit = findViewById(R.id.commit);
         totalm = (TextView) findViewById(R.id.totalm);
         iv_main = findViewById(R.id.iv_main);
+        btn_2 = findViewById(R.id.help);
 
         iv_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +69,14 @@ public class ScanActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT); // 갤러리 열기
                 startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
+
+        btn_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScanActivity.this, HelpActivity.class);
+                startActivity(intent);
             }
         });
 
