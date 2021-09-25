@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketMoneyDiary">
         <activity android:name=".calender.CalenderActivity"></activity>
-        <activity android:name="Memo.MemoActivity" />
+        <activity android:name=".MemoActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".SaveActivity" />
         <activity android:name=".SettingActivity" />
@@ -23,7 +23,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
