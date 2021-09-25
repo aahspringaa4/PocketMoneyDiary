@@ -12,16 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketMoneyDiary">
-        <activity android:name=".calender.CalenderActivity" />
-        <activity android:name=".MemoActivity" />
-        <activity android:name=".MemoScanActivity" />
-        <activity android:name=".HelpActivity" />
-        <activity android:name=".SaveActivity" />
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".goalActivity" />
-        <activity android:name=".NumberPadActivity" />
-        <activity android:name=".ScanActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ButtomFragment.CalenderActivity" />
+        <activity android:name=".memo.MemoActivity" />
+        <activity android:name=".memo.MemoScanActivity" />
+        <activity android:name=".ButtomFragment.HelpActivity" />
+        <activity android:name=".NumberPad.SaveActivity" />
+        <activity android:name=".ButtomFragment.SettingActivity" />
+        <activity android:name=".ButtomFragment.goalActivity" />
+        <activity android:name=".NumberPad.NumberPadActivity" />
+        <activity android:name=".ButtomFragment.ScanActivity" />
+        <activity android:name=".Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
