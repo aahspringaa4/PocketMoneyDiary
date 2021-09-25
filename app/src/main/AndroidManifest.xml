@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketMoneyDiary">
         <activity android:name=".ButtomFragment.CalenderActivity" />
-        <activity android:name=".memo.MemoActivity" />
-        <activity android:name=".memo.MemoScanActivity" />
+        <activity android:name=".Memo.MemoActivity" />
+        <activity android:name=".Memo.MemoScanActivity" />
         <activity android:name=".ButtomFragment.HelpActivity" />
         <activity android:name=".NumberPad.SaveActivity" />
         <activity android:name=".ButtomFragment.SettingActivity" />
