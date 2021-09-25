@@ -1,4 +1,4 @@
-package com.project.sample_calendar.decorators;
+package com.example.pocketmoneydiary.calender;
 
 import android.graphics.Color;
 import android.text.style.ForegroundColorSpan;
