@@ -1,8 +1,10 @@
-package com.example.pocketmoneydiary;
+package com.example.pocketmoneydiary.ButtomFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.pocketmoneydiary.R;
 
 public class HelpActivity extends AppCompatActivity {
 
