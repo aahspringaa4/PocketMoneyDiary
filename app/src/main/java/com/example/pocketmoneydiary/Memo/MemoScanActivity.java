@@ -1,6 +1,7 @@
 package com.example.pocketmoneydiary.Memo;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +13,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pocketmoneydiary.ButtomFragment.HelpActivity;
 import com.example.pocketmoneydiary.R;
 
 import java.util.Calendar;
 
 public class MemoScanActivity extends AppCompatActivity {
+
+    Button help;
     TextView topic;
     ImageButton back;
     private int Request_Re = 202;
@@ -32,6 +36,7 @@ public class MemoScanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo_scan);
 
+        help = findViewById(R.id.help);
         back = (ImageButton) findViewById(R.id.back);
         topic = (TextView) findViewById(R.id.textView2);
         nowaday = (Button) findViewById(R.id.nowaday);
@@ -39,6 +44,14 @@ public class MemoScanActivity extends AppCompatActivity {
         memo = (EditText) findViewById(R.id.memo);
         back.bringToFront();
         topic.bringToFront();
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (MemoScanActivity.this, HelpActivity.class);
+                startActivity(intent);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
