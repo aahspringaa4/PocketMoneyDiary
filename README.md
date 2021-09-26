@@ -1,1 +1,9 @@
-PocketMoneyDiary
+## PocketMoneyDiary
+
+사용한 용돈, 받은 용돈, 저축한 용돈 등을 기록하고 관리 할 수 있습니다.
+
+### Information
+---
+1. 많은 기능들이 준비 중입니다!
+
+## 개발중_!;;
