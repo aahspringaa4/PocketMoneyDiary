@@ -58,6 +58,7 @@ public class SaveActivity extends AppCompatActivity {
                 textView.append("1");
             }
         });
+        
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
